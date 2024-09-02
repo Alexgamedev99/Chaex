@@ -26,10 +26,10 @@ void printDate(struct date date){
 void readDate(struct date *date){
     scanf("%d %d %d",&date->year, &date->month, &date->day);
 }
-struct date advanceDay(struct date tom)
+struct date advanceDay(struct date tomorrow)
 {
     int DayMonth = 0;
-    switch (tom.month){
+    switch (tomorrow.month){
         case(1):
         case(3):
         case(5):
@@ -40,26 +40,26 @@ struct date advanceDay(struct date tom)
         DayMonth = 1;
         break;
     }
-    if(tom.day >= 31 && tom.month >= 12){
-        tom.day = 1;
-        tom.month = 1;
-        tom.year += 1;
+    if(tomorrow.day >= 31 && tomorrow.month >= 12){
+        tomorrow.day = 1;
+        tomorrow.month = 1;
+        tomorrow.year += 1;
     }
-    else if(tom.month == 2 && tom.day >= 28){
-        tom.day = 1;
-        tom.month++;
+    else if(tomorrow.month == 2 && tomorrow.day >= 28){
+        tomorrow.day = 1;
+        tomorrow.month++;
     }
-    else if(DayMonth == 1 && tom.day >= 31){
-        tom.day = 1;
-        tom.month++;
+    else if(DayMonth == 1 && tomorrow.day >= 31){
+        tomorrow.day = 1;
+        tomorrow.month++;
     }
-    else if(DayMonth == 0 && tom.day >= 30){
-        tom.day = 1;
-        tom.month++;
+    else if(DayMonth == 0 && tomorrow.day >= 30){
+        tomorrow.day = 1;
+        tomorrow.month++;
     }
     else{
-        tom.day++;
+        tomorrow.day++;
     }
-   return tom;
+   return tomorrow;
 }
 
