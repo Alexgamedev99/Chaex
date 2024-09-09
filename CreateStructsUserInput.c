@@ -3,7 +3,7 @@ struct point{
     int x;
     int y;
 };
-void readPoint(struct point * z);
+void readPoint(struct point * ptr);
 void printPoint(struct point pt);
 int main(){
     struct point z;
